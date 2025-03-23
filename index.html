@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="./images/d79e4d369910bcdee90dea05ac814fc8.png" type="image/x-icon">
+    <title>DuckShop</title>
+</head>
+<body>
+    <div class="overlay overlay_burger"></div>
+    <div class="overlay overlay_form"></div>
+    <header class="header">
+        <section class="header_section">
+            <div class="container">
+                <div class="logo">
+                    <img src="./images/Logo.svg" alt="Логотип">
+                </div>
+                <nav class="navigation_menu desktop_navigation_menu">
+                    <ul>
+                        <li><a target="_blank" href="#" class="active">Главная</a></li>
+                        <li><a target="_blank" href="#" id="dropdown_menu">Каталог</a></li>
+                        <li><a target="_blank" href="#">Блог</a></li>
+                        <li><a target="_blank" href="#">Отзывы</a></li>
+                        <li><a target="_blank" href="#">Контакты</a></li>
+                    </ul>
+                </nav>  
+                <nav class="navigation_menu mobile_navigation_menu">
+                    <div class="logo">
+                        <img src="./images/Logo.svg" alt="Логотип">
+                    </div>
+                    <button id="closeMenu_burger"><img src="./images/Nav.svg" alt=""></button>
+                    <ul>
+                        <li><a target="_blank" href="#" class="active">Главная</a></li>
+                        <li><a target="_blank" href="#" id="dropdown_menu">Каталог</a></li>
+                        <li><a target="_blank" href="#">Блог</a></li>
+                        <li><a target="_blank" href="#">Отзывы</a></li>
+                        <li><a target="_blank" href="#">Контакты</a></li>
+                        <li><button class="btn btn_primary btn_feedback" id="menuToggle_form_mobile">Заказать обратный звонок</button></li>
+                    </ul>
+                </nav>
+                <div class="shop_and_feedback">
+                    <button class="icon icon_shopping_basket"></button>
+                    <button class="btn btn_primary btn_feedback" id="menuToggle_form">Заказать обратный звонок</button>
+                    <button class="icon icon_burger" id="menuToggle_burger"></button>
+                </div>
+            </div>
+        </section>
+    </header>
+    <div class="feedback_form">
+        <div class="data_container">
+            <button id="closeMenu_form"><img src="./images/Nav.svg" alt=""></button>
+            <label for="data_container_name">Имя <span>*</span></label>
+            <input type="text" class="data_container_name" placeholder="Введите ваше имя">
+            <label for="data_container_phone">Телефон <span>*</span></label>
+            <input type="tel" class="data_container_phone" name="phone" placeholder="+7 000 000 00 00" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
+            <buttton class="btn btn_primary" id="send_form">Отправить</buttton>
+        </div>
+        <div class="official_info_container">
+            <p>Нажимая кнопку “Отправить”, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и <a href="#">договором оферты</a></p>
+        </div>
+    </div>
+    <main class="main">
+        <section class="utochki_section">
+            <div class="container">
+                <h2 class="main_title left">МНОГО</h2>
+                <h2 class="main_title right">УТОЧЕК</h2>
+                <div class="description">
+                    <p>Маленький друг найдётся для каждого<br>в этом кряжевном желтом мире</p>
+                    <button href="#" class="btn btn_secondary">Смотреть уточек</button>
+                </div>
+                <figure class="duck_figure duck_figure_desktop">
+                    <img class="duck_quack" src="./images/krya.svg" alt="">
+                    <img class="duck_image" src="./images/utochka.svg" alt="">
+                </figure>
+            </div>
+        </section>
+        <figure class="duck_figure duck_figure_mobile">
+            <img class="duck_quack" src="./images/krya.svg" alt="">
+            <img class="duck_image" src="./images/duck_mobile.jpg" alt="">
+        </figure>
+    </main>
+    <footer class="footer">
+        <section class="footer_section">
+            <div class="container">
+                <ul class="ducks_list">
+                    <li><a href="#">Классические</a></li>
+                    <li><a href="#">Уточки панки</a></li>
+                    <li><a href="#">Супергерои</a></li>
+                    <li><a href="#">Милые</a></li>
+                    <li><a href="#">Для детей</a></li>
+                    <li><a href="#">Взрослым</a></li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+<script>
+    /* Управление бургер-меню */
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle_burger = document.getElementById('menuToggle_burger');
+        const closeBurgerMenu = document.getElementById('closeMenu_burger');
+        const overlay_burger = document.querySelector('.overlay_burger');
+        const navMenu = document.querySelector('.mobile_navigation_menu');
+
+        menuToggle_burger.addEventListener('click', function() {
+            navMenu.classList.add('active');
+            overlay_burger.style.display = 'block';
+        });
+
+        closeBurgerMenu.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            overlay_burger.style.display = 'none';
+        });
+
+        overlay_burger.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            overlay_burger.style.display = 'none';
+        });
+    });
+    /* /Управление бургер-меню */
+</script>
+<script>
+    /* Управление формой */
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle_form = document.getElementById('menuToggle_form');
+        const menuToggle_form_mobile = document.getElementById('menuToggle_form_mobile')
+        const closeFeedbackForm = document.getElementById('closeMenu_form');
+        const feedbackMenu = document.querySelector('.feedback_form');
+        const sendForm = document.getElementById('send_form');
+
+        menuToggle_form.addEventListener('click', function() {
+            feedbackMenu.classList.add('active')
+            if (overlay_burger) {
+                overlay_burger.style.display = 'none'
+            }
+        });
+
+        menuToggle_form_mobile.addEventListener('click', function() {
+            feedbackMenu.classList.add('active')
+        });
+
+        sendForm.addEventListener('click', function() {
+            feedbackMenu.classList.remove('active');
+        })
+
+        closeFeedbackForm.addEventListener('click', function() {
+            feedbackMenu.classList.remove('active');
+        });
+    });
+
+    /* /Управление формой */
+
+</script>
+
+<script>
+    /* Маска для ввода телефона */
+
+    document.querySelector('.data_container_phone').addEventListener('input', function(event) {
+        const input = event.target;
+        const value = input.value.replace(/\D/g, '');
+        let formattedValue = '+7 ';
+
+        if (value.length > 1) {
+            formattedValue += '(' + value.substring(1, 4) + ') ';
+        }
+        if (value.length > 4) {
+            formattedValue += value.substring(4, 7) + '-';
+        }
+        if (value.length > 7) {
+            formattedValue += value.substring(7, 9) + '-';
+        }
+        if (value.length > 9) {
+            formattedValue += value.substring(9, 11);
+        }
+
+        input.value = formattedValue;
+    });
+
+/* /Маска для ввода телефона */
+
+</script>
+</body>
+</html>
