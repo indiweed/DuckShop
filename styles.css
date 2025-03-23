@@ -87,12 +87,12 @@ legend {
 
 @font-face {
     font-family: 'Inter';
-    src: url(/fonts/Inter/static/Inter_18pt-Regular.ttf) format('truetype');
+    src: url(./fonts/Inter/static/Inter_18pt-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Jura';
-    src: url(/fonts/Jura/static/Jura-Regular.ttf) format('truetype');
+    src: url(./fonts/Jura/static/Jura-Regular.ttf) format('truetype');
 }
 
 /* UI-KIT */
