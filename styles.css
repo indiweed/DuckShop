@@ -531,6 +531,10 @@ h2 {
         float: inline-start;
         margin-top: 30px;
     }
+
+    .main_title.right {
+        z-index: 10;
+    }
     
     .duck_figure.duck_figure_desktop {
         display: none;
@@ -563,6 +567,7 @@ h2 {
     .utochki_section .description {
         padding: 0;
     }
+
     .duck_figure {
         top: 340px;
     }
