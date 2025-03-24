@@ -199,15 +199,17 @@ input::placeholder {
 
 span, a, p, label, input {
     font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5%;
 }
 
 h2 {
     font-family: 'Jura', sans-serif;
     font-size: 152px;
-    font-weight: 700px;
+    font-weight: 700;
     color: #1E1E1E;
     line-height: 100%;
     letter-spacing: 0px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 960px) {
@@ -494,7 +496,7 @@ h2 {
 .duck_figure_desktop {
     width: max-content;
     top: 54%;
-    left: 45%;
+    left: 46%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
@@ -592,6 +594,7 @@ h2 {
 
 .footer .footer_section .container {
     position: relative;
+    z-index: 100;
 }
 
 .footer .footer_section .container ul {
